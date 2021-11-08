@@ -8,28 +8,28 @@
 ====================================================== -©vk©-->
     <size njmax='1000' nconmax='1000'/>
 
-    <include file="../../../sims/scene_sim/basic_scene.xml"/>
-    <include file="../../../sims/franka_sim/assets/assets.xml"/>
-    <include file="../../../sims/franka_sim/assets/gripper_assets.xml"/>
-    <include file="../../../sims/franka_sim/assets/actuator0.xml"/>
-    <include file="../../../sims/franka_sim/assets/gripper_actuator0.xml"/>
-    <include file="../../../sims/furniture_sim/oven/oven_asset.xml"/>
-    <include file="../../../sims/furniture_sim/counters/counters_asset.xml"/>
-    <include file="../../../sims/furniture_sim/backwall/backwall_asset.xml"/>
-    <include file="../../../sims/furniture_sim/slidecabinet/slidecabinet_asset.xml"/>
-    <include file="../../../sims/furniture_sim/hingecabinet/hingecabinet_asset.xml"/>
-    <include file="../../../sims/furniture_sim/microwave/microwave_asset.xml"/>
-    <include file="../../../sims/furniture_sim/kettle/kettle_asset.xml"/>
+    <include file="../../sims/scene_sim/basic_scene.xml"/>
+    <include file="../../sims/franka_sim/assets/assets.xml"/>
+    <include file="../../sims/franka_sim/assets/gripper_assets.xml"/>
+    <include file="../../sims/franka_sim/assets/actuator0.xml"/>
+    <include file="../../sims/franka_sim/assets/gripper_actuator0.xml"/>
+    <include file="../../sims/furniture_sim/oven/oven_asset.xml"/>
+    <include file="../../sims/furniture_sim/counters/counters_asset.xml"/>
+    <include file="../../sims/furniture_sim/backwall/backwall_asset.xml"/>
+    <include file="../../sims/furniture_sim/slidecabinet/slidecabinet_asset.xml"/>
+    <include file="../../sims/furniture_sim/hingecabinet/hingecabinet_asset.xml"/>
+    <include file="../../sims/furniture_sim/microwave/microwave_asset.xml"/>
+    <include file="../../sims/furniture_sim/kettle/kettle_asset.xml"/>
 
     <visual>
         <global offwidth="2560" offheight="1920" />
-        <quality shadowsize="4096" offsamples="4" />
+        <!--<quality shadowsize="4096" offsamples="4" />-->
         <map force="0.1" fogend="5" />
     </visual>
 
     <compiler inertiafromgeom='auto' inertiagrouprange='3 5' angle="radian"
-              meshdir="../../../sims/franka_sim"
-              texturedir="../../../sims/franka_sim"/>
+              meshdir="../../sims/franka_sim"
+              texturedir="../../sims/franka_sim"/>
 
     <equality>
         <weld body1="vive_controller" body2="world" solref="0.02 1" solimp=".7 .95 0.050"/>
@@ -48,34 +48,44 @@
         </body>
 
         <site name='target' pos='0 0 0' size='0.1' rgba='0 2 0 .2'/>
-        <camera name='left_cap' pos='-1.2 -0.5 1.8' quat='0.78 0.49 -0.22 -0.32' />
-        <camera name='right_cap' pos='1.2 -0.5 1.8' quat='0.76 0.5 0.21 0.35'/>
+        <camera name='left_cap' pos='-0.3 -3.0 4.5' quat='0.85 0.38 0.01 0.01'/>
+        <camera name='micro_cam' pos='-0.27 -0.5 2.3' euler='1.085 0.4 0.2'/>
+        <camera name='hand_micro_cam' pos='-1.2 -1.8 2.5' euler='1.4 -0.37 0.0'/>
+        <camera name='sdoor_cam' pos='0.6 -0.6 3.3' euler='1.085 0.4 0.2'/>
+        <camera name='hand_sdoor_cam' pos='-1.2 -1.0 2.7' euler='1.4 -0.65 0.0'/>
+        <camera name='knob1_cam' pos='0.2 0.3 2.3' euler='0.1 0.0 0.0'/>
+        <camera name='hand_knob1_cam' pos='1.6 -1.5 2.5' euler='1.4 0.57 0.0'/>
+        <camera name='light_cam' pos='-0.4 -0.1 2.3' euler='1.6 -0.0 0.0'/>
+        <camera name='hand_light_cam' pos='-1.65 -0.4 2.5' euler='1.4 -1.06 0.0'/>
+        <camera name='diag_cap' pos='2.0 -3.0 4.5' euler='0.785 0.4 0.4'/>
+        <camera name='side_cap' pos='2.0 -0.5 3.0' euler='0.785 1.0 0.7'/>
+        <camera name='right_cap' pos='1.2 -0.9 1.8' quat='0.76 0.5 0.21 0.35'/>
 
         <!-- Robot -->
         <body pos='0. 0 1.8' euler='0 0 1.57'>
             <geom type='cylinder' size='.120 .90' pos='-.04 0 -0.90' class='panda_viz'/>
-            <include file="../../../sims/franka_sim/assets/chain0.xml"/>
+            <include file="../../sims/franka_sim/assets/chain0.xml"/>
         </body>
 
         <body name='desk' pos='-0.1 0.75 0'>
 
             <body name="counters1" pos="0 0 0" >
-                <include file="../../../sims/furniture_sim/counters/counters_body.xml"/>
+                <include file="../../sims/furniture_sim/counters/counters_body.xml"/>
             </body>
             <body name="oven" pos="0 0 0" >
-                <include file="../../../sims/furniture_sim/oven/oven_body.xml"/>
+                <include file="../../sims/furniture_sim/oven/oven_body.xml"/>
             </body>
             <body name="backwall" pos="0 0 0" >
-                <include file="../../../sims/furniture_sim/backwall/backwall_body.xml"/>
+                <include file="../../sims/furniture_sim/backwall/backwall_body.xml"/>
             </body>
             <body name="slidecabinet" pos="0.4 0.3 2.6" >
-                <include file="../../../sims/furniture_sim/slidecabinet/slidecabinet_body.xml"/>
+                <include file="../../sims/furniture_sim/slidecabinet/slidecabinet_body.xml"/>
             </body>
             <body name="hingecabinet" pos="-0.504 0.28 2.6" >
-                <include file="../../../sims/furniture_sim/hingecabinet/hingecabinet_body.xml"/>
+                <include file="../../sims/furniture_sim/hingecabinet/hingecabinet_body.xml"/>
             </body>
             <body name="microwave" pos="-0.750 -0.025 1.6" euler="0 0 0.3">
-                <include file="../../../sims/furniture_sim/microwave/microwave_body.xml"/>
+                <include file="../../sims/furniture_sim/microwave/microwave_body.xml"/>
             </body>
         </body>
         <body name="kettle0" pos="-0.269 0.35 1.626">
@@ -85,7 +95,7 @@
             <joint class="kettle" name="kettle0:Rx" axis="1 0 0" type="hinge" range="-3.14 3.14"/>
             <joint class="kettle" name="kettle0:Ry" axis="0 1 0" type="hinge" range="-3.14 3.14"/>
             <joint class="kettle" name="kettle0:Rz" axis="0 0 1" type="hinge" range="-3.14 3.14"/>
-            <include file="../../../sims/furniture_sim/kettle/kettle_body0.xml"/>
+            <include file="../../sims/furniture_sim/kettle/kettle_body0.xml"/>
         </body>
 
     </worldbody>
