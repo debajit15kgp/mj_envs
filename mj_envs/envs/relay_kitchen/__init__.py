@@ -14,13 +14,13 @@ CURR_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = CURR_DIR + "/assets/franka_kitchen.xml"
 CONFIG_PATH = CURR_DIR + "/assets/franka_kitchen.config"
 
-# Kitchen
-register(
-    id="kitchen-v0",
-    entry_point="mj_envs.envs.relay_kitchen:KitchenTasksV0",
-    max_episode_steps=280,
-)
-
+# # Kitchen
+# register(
+#     id="kitchen-v0",
+#     entry_point="mj_envs.envs.relay_kitchen:KitchenTasksV0",
+#     max_episode_steps=280,
+# )
+#
 # # Kitchen
 # register(
 #     id="kitchen-v2",
